@@ -4,7 +4,8 @@ import axios from 'axios'
 export const getHelpAndTips = () => {
     return (dispatch) => {
         return new Promise((resolve, reject) => {
-            axios.get('https://wknd-take-home-challenge-api.herokuapp.com/help-tips')
+            const Url = process.env.REACT_APP_API_HELPTIPS
+            axios.get(Url)
                 .then((res) => {
                     dispatch({ type: 'GET_LIST_HELP_AND_TIPS', payload: res });
                 })

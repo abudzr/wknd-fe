@@ -1,6 +1,7 @@
 .help-tips {
     height: max-content;
     background: #000000;
+    position: relative;
 }
 
 .help-tips h2 {
@@ -39,6 +40,7 @@
 
 .card-help {
     position: relative;
+    z-index: 99;
     width: 311px;
     height: 176px;
     margin-top: 15px;
@@ -52,6 +54,12 @@
     height: 72px;
     opacity: 0.5;
     background-color: #000000;
+}
+
+.path {
+    position: absolute;
+    top: 180px;
+    right: 80px;
 }
 
 @media(max-width: 576px) {
@@ -77,6 +85,10 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    .path {
+        display: none;
+    }
 }
 
 @media (min-width: 576px)and (max-width:768px) {
@@ -98,4 +110,7 @@
         margin-right: auto;
     }
 
+    .path {
+        display: none;
+    }
 }

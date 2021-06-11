@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { getHelpAndTips } from '../../configs/Redux/action/helpAndTips'
+import { getHelpAndTips } from "../../configs/Redux/action/helpAndTips"
 
 // import css
 import "../../assets/css/helpandtips.css"
-import { Button } from '../../components';
+import { Button } from "../../components";
 
 // import picture
 import lego from "../../assets/img/lego-3.png"
+import path from "../../assets/img/path.png"
 
 function HelpTips() {
     // redux
@@ -41,6 +42,7 @@ function HelpTips() {
                         ))}
                     </div>
                 </div>
+                <img src={path} className="path" width="159" height="195" alt="path" />
                 <div className="mt-5 mb-3">
                     <h2>You’re all set.</h2>
                     <p>The wise man therefore always holds in these matters to this principle of selection.</p>

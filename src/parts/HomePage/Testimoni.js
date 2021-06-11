@@ -42,9 +42,7 @@ function Testimoni() {
                 <div className="circle"></div>
                 <h2 className="mt-5 testimoni">Testimonial</h2>
                 <div className=" carousel-wrapper">
-                    <Carousel
-                        breakPoints={breakPoints}
-                    >
+                    <Carousel breakPoints={breakPoints}>
                         {testimoni.data.map((item) => (
                             <Item key={item.id}>
                                 <div className="carousel-testimoni">

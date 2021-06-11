@@ -11,6 +11,9 @@ import lego from "../../assets/img/lego.png"
 import { Button } from "../../components"
 
 function Hero() {
+    const handleClickLetsGo = () => {
+        window.scrollTo(0, 800)
+    }
 
     return (
         <>
@@ -22,6 +25,7 @@ function Hero() {
                 <Button
                     btn="letsgo"
                     title="Let’s Go"
+                    onClick={handleClickLetsGo}
                 />
             </div>
         </>

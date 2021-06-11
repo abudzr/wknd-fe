@@ -26,6 +26,15 @@
     color: #000000;
 }
 
+.arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    border: none;
+    background: #fff;
+    opacity: 1;
+}
+
 @media (max-width: 576px) {
     .letsgo {
         top: 490px;

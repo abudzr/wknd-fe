@@ -10,7 +10,7 @@ function home() {
             <Navbar />
             <Hero />
             <Testimoni />
-            {/* <HelpTips /> */}
+            <HelpTips />
             <Footer />
         </>
     )

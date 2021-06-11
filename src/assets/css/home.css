@@ -63,15 +63,15 @@
     }
 
     .title-hero {
-        left: 15%;
-        transform: translate(-10%);
+        left: 10%;
+        transform: translate(-5%);
 
         font-size: 52px;
         line-height: 0.98;
     }
 
     .subtitle-hero {
-        top: 230px;
+        top: 240px;
         left: 25%;
         transform: translate(-5%);
 
@@ -83,6 +83,10 @@
         left: 30%;
         transform: translate(-5%);
     }
+}
 
-
+@media (min-width: 576px)and (max-width:768px) {
+    .subtitle-hero {
+        top: 270px;
+    }
 }

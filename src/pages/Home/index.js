@@ -1,5 +1,5 @@
 import React from "react"
-import { Footer, Navbar } from "../../components"
+import { Footer, Navbar, ScrollToTop } from "../../components"
 import HelpTips from "../../parts/HomePage/HelpTips"
 import Hero from "../../parts/HomePage/Hero"
 import Testimoni from "../../parts/HomePage/Testimoni"
@@ -9,6 +9,7 @@ function home() {
         <>
             <Navbar />
             <Hero />
+            <ScrollToTop />
             <Testimoni />
             <HelpTips />
             <Footer />

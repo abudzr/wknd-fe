@@ -12,7 +12,7 @@ import { Button } from "../../components"
 
 function Hero() {
     const handleClickLetsGo = () => {
-        window.scrollTo(0, 800)
+        window.scrollTo({ top: 800, behavior: "smooth" })
     }
 
     return (

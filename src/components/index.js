@@ -1,9 +1,11 @@
-import Navbar from "./Navbar"
-import Footer from "./Footer"
 import Button from "./Button"
+import Footer from "./Footer"
+import Navbar from "./Navbar"
+import ScrollToTop from "./ScrollToTop"
 
 export {
-    Navbar,
+    Button,
     Footer,
-    Button
+    Navbar,
+    ScrollToTop
 }

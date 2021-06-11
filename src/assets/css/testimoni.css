@@ -1,0 +1,32 @@
+.definition {
+    height: 591px;
+    background-color: #eebece;
+}
+
+.text-definition {
+    padding-top: 210px;
+    margin-left: 55%;
+    transform: translate(-55%);
+    font-size: 21px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.52;
+    letter-spacing: -0.75px;
+    text-align: right;
+    color: #000000;
+}
+
+.text-definition span {
+    font-weight: bold;
+    color: #0b24fb;
+}
+
+@media (max-width: 576px) {
+    .text-definition {
+        margin-left: 30%;
+        transform: translate(-30%);
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}

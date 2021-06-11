@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch } from "react-redux";
 import { getHelpAndTips } from "../../configs/Redux/action/helpAndTips"
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+
 // import css
 import "../../assets/css/helpandtips.css"
 import { Button } from "../../components";
@@ -15,9 +17,12 @@ function HelpTips() {
     const [state, setState] = useState(null);
 
     useEffect(() => {
-        dispatch(getHelpAndTips()).then((res) => {
-            setState(res)
-        })
+        setTimeout(() => {
+            dispatch(getHelpAndTips()).then((res) => {
+                setState(res)
+            })
+
+        }, 2000);
     }, [dispatch]);
 
     return (
@@ -28,19 +33,35 @@ function HelpTips() {
                 <h2 className="pt-5">Help & Tips</h2>
                 <div className="container">
                     <div className="row">
-                        {state && state.data.map((item) => (
-                            <div className="col-lg-4 col-12" key={item.id} >
-                                <div className="card-help" >
-                                    <img src={item.image} width="311" height="176" alt="help and tips" />
-                                    <div className="rectangle-card-help">
-                                        <div className="d-flex">
-                                            <span>{item.title}</span>
-                                            <Button btn="arrow" title={<i className="fa fa-arrow-right" />} />
+                        {state === null ?
+                            Array(3)
+                                .fill()
+                                .map((item, index) => {
+                                    return (
+                                        <div className="col-lg-4 col-12" key={index}>
+                                            <div className="card-help mb-3">
+                                                <SkeletonTheme color="#F1EFF1" highlightColor="#fff" >
+                                                    <Skeleton width={311} height={176} />
+                                                    <Skeleton width={311} />
+                                                </SkeletonTheme>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            :
+                            state.data.map((item) => (
+                                <div className="col-lg-4 col-12" key={item.id} >
+                                    <div className="card-help" >
+                                        <img src={item.image} width="311" height="176" alt="help and tips" />
+                                        <div className="rectangle-card-help">
+                                            <div className="d-flex">
+                                                <span>{item.title}</span>
+                                                <Button btn="arrow" title={<i className="fa fa-arrow-right" />} />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
                     </div>
                 </div>
                 <img src={path} className="path" width="159" height="195" alt="path" />

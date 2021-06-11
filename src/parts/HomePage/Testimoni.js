@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-
+import Skeleton from "react-loading-skeleton";
 // import redux
 import { useDispatch } from "react-redux";
 import { getTestimoni } from "../../configs/Redux/action/testimoni"
@@ -50,8 +50,8 @@ function Testimoni() {
                             {state.data.map((item) => (
                                 <Item key={item.id}>
                                     <div className="carousel-testimoni">
-                                        <h2>{item.by}</h2>
-                                        <p>{item.testimony}</p>
+                                        <h2>{item.by || <Skeleton />}</h2>
+                                        <p>{item.testimony || <Skeleton count={3} />}</p>
                                     </div>
                                 </Item>
                             ))}

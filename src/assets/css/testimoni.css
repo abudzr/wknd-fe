@@ -67,6 +67,11 @@
     box-shadow: inset 0 0 1px 0px #fff;
 }
 
+.rec.rec-arrow:hover {
+    background: #0b24fb !important;
+    color: #fff;
+}
+
 .carousel-testimoni h2 {
     font-size: 32px;
     font-weight: 900;

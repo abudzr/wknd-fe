@@ -7,6 +7,7 @@ export const getTestimoni = () => {
             const Url = process.env.REACT_APP_API_TESTIMONI
             axios.get(Url)
                 .then((res) => {
+                    resolve(res)
                     dispatch({ type: 'GET_LIST_TESTIMONI', payload: res });
                 })
                 .catch((err) => {

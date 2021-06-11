@@ -1,7 +1,7 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 // import redux
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getTestimoni } from "../../configs/Redux/action/testimoni"
 
 // import package
@@ -25,10 +25,13 @@ const breakPoints = [
 function Testimoni() {
     // redux
     const dispatch = useDispatch();
-    const { testimoni } = useSelector((state) => state.testimoni);
+
+    const [state, setState] = useState(null);
 
     useEffect(() => {
-        dispatch(getTestimoni())
+        dispatch(getTestimoni()).then((res) => {
+            setState(res)
+        })
     }, [dispatch]);
 
     return (
@@ -42,16 +45,18 @@ function Testimoni() {
                 <div className="circle"></div>
                 <h2 className="mt-5 testimoni">Testimonial</h2>
                 <div className=" carousel-wrapper">
-                    <Carousel breakPoints={breakPoints}>
-                        {testimoni.data.map((item) => (
-                            <Item key={item.id}>
-                                <div className="carousel-testimoni">
-                                    <h2>{item.by}</h2>
-                                    <p>{item.testimony}</p>
-                                </div>
-                            </Item>
-                        ))}
-                    </Carousel>
+                    {state &&
+                        <Carousel breakPoints={breakPoints}>
+                            {state.data.map((item) => (
+                                <Item key={item.id}>
+                                    <div className="carousel-testimoni">
+                                        <h2>{item.by}</h2>
+                                        <p>{item.testimony}</p>
+                                    </div>
+                                </Item>
+                            ))}
+                        </Carousel>
+                    }
                 </div>
             </div>
             <div className="pov">

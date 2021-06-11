@@ -7,6 +7,7 @@ export const getHelpAndTips = () => {
             const Url = process.env.REACT_APP_API_HELPTIPS
             axios.get(Url)
                 .then((res) => {
+                    resolve(res)
                     dispatch({ type: 'GET_LIST_HELP_AND_TIPS', payload: res });
                 })
                 .catch((err) => {
